@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_bdd.ProjetoHub_BDD;
+package br.com.rsinet.hub_bdd.runner;
 
 import org.junit.runner.RunWith;
 

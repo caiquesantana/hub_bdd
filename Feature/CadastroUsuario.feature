@@ -1,8 +1,10 @@
-#language: pt
-#coding: utf-8
+# language: pt
+# coding: utf-8
 
-@CadastroUsuario
-Característica: Cadastro de Usuário
+Funcionalidade: Cadastrar Usuário
+	
+	Contexto:
+	Dado que eu esteja no site
 	
 Cenário: Mostrar mensagem de sucesso ao criar novo usuário
   Dado que eu tenha acessado o site 
