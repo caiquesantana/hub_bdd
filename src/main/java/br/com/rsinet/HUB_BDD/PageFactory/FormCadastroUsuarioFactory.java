@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FormCadastroUsuarioFactory {
@@ -87,7 +88,8 @@ public class FormCadastroUsuarioFactory {
 		Nome.sendKeys();
 		Sobrenome.sendKeys();
 		Contato.sendKeys();
-		Pais.sendKeys();
+		Select pais = new Select(Pais);
+		pais.selectByVisibleText("Brazil");
 		Cidade.sendKeys();
 		Rua.sendKeys();
 		Estado.sendKeys();
