@@ -9,7 +9,10 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		 features = "Feature\\CadastroUsuario.feature"
 		 ,glue={"br.com.rsinet.HUB_BDD.stepDefinition"}
-		 )
+		 ,monochrome = true
+		 ,dryRun = false
+		 ,tags = {"@CadastroSucesso"} 
+		)
 
 public class CadastroUsuarioRunner {
 

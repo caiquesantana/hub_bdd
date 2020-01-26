@@ -81,19 +81,19 @@ public class FormCadastroUsuarioFactory {
 	}
 
 	public void FormCadastro() {
-		Login.sendKeys();
-		Email.sendKeys();
-		Senha.sendKeys();
-		ConfirmarSenha.sendKeys();
-		Nome.sendKeys();
-		Sobrenome.sendKeys();
-		Contato.sendKeys();
+		Login.sendKeys("Caiqueee");
+		Email.sendKeys("caique@email.com");
+		Senha.sendKeys("Caique1");
+		ConfirmarSenha.sendKeys("Caique1");
+		Nome.sendKeys("Caique");
+		Sobrenome.sendKeys("Santana");
+		Contato.sendKeys("123456789");
 		Select pais = new Select(Pais);
 		pais.selectByVisibleText("Brazil");
-		Cidade.sendKeys();
-		Rua.sendKeys();
-		Estado.sendKeys();
-		Cep.sendKeys();
+		Cidade.sendKeys("Barueri");
+		Rua.sendKeys("Rua 1");
+		Estado.sendKeys("São Paulo");
+		Cep.sendKeys("095943-908");
 		TermoDeUso.click();
 	}
 
