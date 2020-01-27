@@ -1,4 +1,5 @@
 # language: pt
+@PesquisaPelaLupa
 Funcionalidade: Pesquisa de produto
   A pesquisa deve ser feita pelo campo de busca.
 

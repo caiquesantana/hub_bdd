@@ -8,17 +8,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Driver {
 	static WebDriver driver;
 
-	private Driver() {
-
-	}
+//	private Driver() {
+//
+//	}
 
 	public static WebDriver createChrome() {
 		if (driver == null) {
 
 			driver = new ChromeDriver();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 			driver.get("http://advantageonlineshopping.com/");
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		}
 		return driver;
 

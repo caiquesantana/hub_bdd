@@ -21,19 +21,27 @@ public class BuscaProdutoLupaPageFactory {
 	@FindBy(how = How.ID, using = "autoComplete")
 	private  WebElement CampoPesquisa;
 	
-	@FindBy(how = How.ID, using = "3")
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/section/article/div[3]/div/div/div[2]/ul/li")
 	private  WebElement Produto;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/section/article/div[3]/div/label/span")
+	private WebElement produtoNaoEncontrado;
 	
 	public void Lupa() {
 		ClicarLupa.click();
 	}
 	
 	public void CampoPesquisa() {
-		CampoPesquisa.sendKeys("" + Keys.ENTER);
+		CampoPesquisa.sendKeys("Iphone" + Keys.ENTER);
 	}
 	
 	public void SelecionaProduto() {
 		Produto.click();
 	}
+	
+	public void ProdutoIndosponivel () {
+		produtoNaoEncontrado.getText();
+	}
+	
 	
 }

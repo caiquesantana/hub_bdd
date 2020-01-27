@@ -16,10 +16,6 @@ public class FormCadastroUsuarioFactory {
 	public FormCadastroUsuarioFactory(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement usuario = wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]")));
-
 	}
 
 	@FindBy(how = How.ID, using = "menuUser")
@@ -67,21 +63,20 @@ public class FormCadastroUsuarioFactory {
 	@FindBy(how = How.NAME, using = "i_agree")
 	private WebElement TermoDeUso;
 
-	@FindBy(how = How.NAME, using = "register_btnundefined")
+	@FindBy(how = How.ID, using = "register_btnundefined")
 	private WebElement EnvioFormulario;
 
 	public void HomePage() throws InterruptedException {
 		Home.click();
-		Thread.sleep(50000);
 	}
 
 	public void CriaNovaConta() {
-		CriarNovaConta.click();
+		CriarNovaConta.sendKeys(Keys.ENTER);
 
 	}
 
 	public void FormCadastro() {
-		Login.sendKeys("Caiqueee");
+		Login.sendKeys("Ronaldinhoooioianjdkfk");
 		Email.sendKeys("caique@email.com");
 		Senha.sendKeys("Caique1");
 		ConfirmarSenha.sendKeys("Caique1");
@@ -94,6 +89,8 @@ public class FormCadastroUsuarioFactory {
 		Rua.sendKeys("Rua 1");
 		Estado.sendKeys("São Paulo");
 		Cep.sendKeys("095943-908");
+	}
+	public void TermoDeUso() {
 		TermoDeUso.click();
 	}
 
