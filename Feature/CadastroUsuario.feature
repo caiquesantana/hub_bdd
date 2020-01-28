@@ -1,6 +1,6 @@
 # language: pt
-# coding: utf-8
-Funcionalidade: Cadastrar Usuário
+
+Funcionalidade: Cadastro de usuario
 
   Contexto: 
     Dado que eu esteja no site
@@ -8,6 +8,12 @@ Funcionalidade: Cadastrar Usuário
 
   @CadastroSucesso
   Cenário: Cadastro de usuario com sucesso
-    Quando e insiro todas as informções do usuário
+    Quando insiro todas as informções do usuário
     E clico no botão de registra
-    Então o usuario é cadastrado com sucesso
+    Então eu valido se o usuário foi cadastrado
+		
+    @CadastroFalha
+    Cenário: Cadastro de usuario com falha
+    Quando insiro as informções do usuário e tento enviar o formulario
+    Então apresenta o erro de login invalido
+    

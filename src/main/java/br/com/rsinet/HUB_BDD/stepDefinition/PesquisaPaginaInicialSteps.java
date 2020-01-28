@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.HUB_BDD.PageFactory.PesquisaPaginaInicialPageFactory;
 import br.com.rsinet.HUB_BDD.suporte.Driver;
+import br.com.rsinet.HUB_BDD.suporte.Screenshot;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Então;
@@ -16,7 +19,7 @@ public class PesquisaPaginaInicialSteps {
 	public void que_estou_na_tela_home() throws Throwable {
 		driver = Driver.createChrome();
 	}
-
+	
 	@Quando("^clico na categoria LAPTOPS$")
 	public void clico_na_categoria_LAPTOPS() throws Throwable {
 		PesquisaPaginaInicialPageFactory categoria = new PesquisaPaginaInicialPageFactory(driver);
@@ -40,6 +43,9 @@ public class PesquisaPaginaInicialSteps {
 	public void eu_valido_o_produto() throws Throwable {
 		PesquisaPaginaInicialPageFactory testePossitivo = new PesquisaPaginaInicialPageFactory(driver);
 		testePossitivo.ProdutoEscolhido();
+		Screenshot.tirarPrint("Busca bem sucedido", driver);
+		Driver.fecharDriver();
+		
 	}
 
 	@Dado("^escolhe produto na tela inicial$")
@@ -57,6 +63,9 @@ public class PesquisaPaginaInicialSteps {
 	public void eu_comparo_o_produto() throws Throwable {
 		PesquisaPaginaInicialPageFactory testeNegativo = new PesquisaPaginaInicialPageFactory(driver);
 		testeNegativo.Comparar();
+		Screenshot.tirarPrint("Busca Falhou", driver);
+		Driver.fecharDriver();
+		
 	}
 	
 }

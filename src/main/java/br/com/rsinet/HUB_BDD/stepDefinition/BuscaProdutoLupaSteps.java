@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.HUB_BDD.PageFactory.BuscaProdutoLupaPageFactory;
 import br.com.rsinet.HUB_BDD.suporte.Driver;
+import br.com.rsinet.HUB_BDD.suporte.Screenshot;
 import cucumber.api.PendingException;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
@@ -44,6 +45,7 @@ public class BuscaProdutoLupaSteps {
 	public void estarei_na_tela_do_produto_pesquisado() throws Throwable {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("scrollBy(0,600)","");
+		Screenshot.tirarPrint("Busca pela lupa com sucesso", driver);
 	}
 
 	@Quando("^digitar um produto inexistente no site$")
@@ -56,5 +58,6 @@ public class BuscaProdutoLupaSteps {
 	public void constata_que_o_produto_nao_existe() throws Throwable {
 		BuscaProdutoLupaPageFactory produtoNaoEncontrado = new BuscaProdutoLupaPageFactory(driver);
 		produtoNaoEncontrado.ProdutoIndosponivel();
+		Screenshot.tirarPrint("Busca pela Lupa Falhou", driver);
 	}
 }

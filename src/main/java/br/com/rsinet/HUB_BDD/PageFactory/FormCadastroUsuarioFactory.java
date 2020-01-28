@@ -1,5 +1,6 @@
 package br.com.rsinet.HUB_BDD.PageFactory;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FormCadastroUsuarioFactory {
+	WebDriver driver;
 
 	public FormCadastroUsuarioFactory(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -76,7 +78,7 @@ public class FormCadastroUsuarioFactory {
 	}
 
 	public void FormCadastro() {
-		Login.sendKeys("Ronaldinhoooioianjdkfk");
+		Login.sendKeys("caaaaique");
 		Email.sendKeys("caique@email.com");
 		Senha.sendKeys("Caique1");
 		ConfirmarSenha.sendKeys("Caique1");
@@ -96,6 +98,10 @@ public class FormCadastroUsuarioFactory {
 
 	public void Submit() {
 		EnvioFormulario.click();
+	}
+	public void ValidaUsuário() {
+		String usuarioLogado =  driver.getCurrentUrl();
+		Assert.assertTrue(usuarioLogado.equals("http://advantageonlineshopping.com/#/"));
 	}
 
 }

@@ -14,14 +14,14 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 			 features = "./Feature/PesquisaPaginaInicial.feature"
 			 ,glue={"br.com.rsinet.HUB_BDD.stepDefinition"}
-			 ,plugin ="com.cucumber.listener.ExtentCucumberFormatter:C:\\Users\\caique.oliveira\\Pictures\\BDD\\ReportsBDD\\BuscaComSucesso.html"
-			 ,tags= {"@BuscaHomeSucesso"}
+			 ,plugin ="com.cucumber.listener.ExtentCucumberFormatter:C:\\Users\\caique.oliveira\\Pictures\\BDD\\ReportsBDD\\BuscaHomeFalha.html"
+			 ,tags= {"@BuscaHomeFalha"}
 			 )
 
-
-public class BuscaPaginaInicialRunner {
+public class BuscaPaginaInicialFalhaRunner {
 	@AfterClass
     public static void writeExtentReport() {
     Reporter.loadXMLConfig(new File("C:\\Users\\caique.oliveira\\git\\ProjetoHub_TDD\\ProjetoHub_BDD\\src\\main\\java\\br\\com\\rsinet\\HUB_BDD\\suporte\\extensionConfig.xml"));
 	}
+
 }
