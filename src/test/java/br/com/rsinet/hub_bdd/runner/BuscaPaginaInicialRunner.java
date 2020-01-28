@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 			 features = "Feature\\PesquisaPaginaInicial.feature"
 			 ,glue={"br.com.rsinet.HUB_BDD.stepDefinition"}
-			 ,tags= {"@BuscaHomeSucesso"}
+			 ,tags= {"@BuscaProdutoPaginaInicial"}
 			 )
 
 

@@ -4,7 +4,7 @@ Funcionalidade: Pesquisa de produto
   A pesquisa deve ser feita pelo campo de busca.
 
   Contexto: 
-    Dado que estou na tela home
+    Dado que estou na tela inicial
     Quando clico na lupa de pesquisa
 
   @PesquisaLupaSucesso

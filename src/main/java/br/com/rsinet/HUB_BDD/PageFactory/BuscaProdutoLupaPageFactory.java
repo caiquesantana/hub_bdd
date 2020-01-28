@@ -32,6 +32,9 @@ public class BuscaProdutoLupaPageFactory {
 	}
 	
 	public void CampoPesquisa() {
+		CampoPesquisa.sendKeys("HP ZBOOK 17 G2 MOBILE WORKSTATION" + Keys.ENTER);
+	}
+	public void CampoPesquisa1() {
 		CampoPesquisa.sendKeys("Iphone" + Keys.ENTER);
 	}
 	
