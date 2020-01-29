@@ -1,5 +1,7 @@
 package br.com.rsinet.HUB_BDD.stepDefinition;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.HUB_BDD.PageFactory.PesquisaPaginaInicialPageFactory;
@@ -64,6 +66,7 @@ public class PesquisaPaginaInicialSteps {
 		PesquisaPaginaInicialPageFactory testeNegativo = new PesquisaPaginaInicialPageFactory(driver);
 		testeNegativo.Comparar();
 		Screenshot.tirarPrint("Busca Falhou", driver);
+		driver.manage().timeouts().implicitlyWait(05, TimeUnit.SECONDS);
 		Driver.fecharDriver();
 		
 	}

@@ -68,6 +68,9 @@ public class FormCadastroUsuarioFactory {
 	@FindBy(how = How.ID, using = "register_btnundefined")
 	private WebElement EnvioFormulario;
 
+	@FindBy(how = How.XPATH, using = "//*[@id=\"formCover\"]/div[1]/div[1]/sec-view[1]/div/label")
+	private WebElement MensagemErroLogin;
+
 	public void HomePage() throws InterruptedException {
 		Home.click();
 	}
@@ -78,7 +81,7 @@ public class FormCadastroUsuarioFactory {
 	}
 
 	public void FormCadastro() {
-		Login.sendKeys("caaaaique");
+		Login.sendKeys("42gqh54");
 		Email.sendKeys("caique@email.com");
 		Senha.sendKeys("Caique1");
 		ConfirmarSenha.sendKeys("Caique1");
@@ -100,8 +103,12 @@ public class FormCadastroUsuarioFactory {
 		EnvioFormulario.click();
 	}
 	public void ValidaUsuário() {
-		String usuarioLogado =  driver.getCurrentUrl();
-		Assert.assertTrue(usuarioLogado.equals("http://advantageonlineshopping.com/#/"));
+		String usuarioLogado = driver.findElement(By.xpath("//*[@id=\"menuUserLink\"]/span")).getText();
+		Assert.assertTrue(usuarioLogado.equals("caique11456"));
+		
 	}
-
+	public void LoginInvalido() {
+		String mensagemErro = MensagemErroLogin.getText();
+		Assert.assertTrue(mensagemErro.contains("Use maximum 15 character"));
+}
 }

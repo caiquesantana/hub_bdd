@@ -1,5 +1,7 @@
 package br.com.rsinet.HUB_BDD.stepDefinition;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,7 +17,6 @@ import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
 public class BuscaProdutoLupaSteps {
-
 	WebDriver driver;
 
 	@Dado("^que estou na tela inicial$")
@@ -43,9 +44,11 @@ public class BuscaProdutoLupaSteps {
 
 	@Então("^estarei na tela do produto pesquisado$")
 	public void estarei_na_tela_do_produto_pesquisado() throws Throwable {
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("scrollBy(0,600)","");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		JavascriptExecutor jse = (JavascriptExecutor) driver;
+//		jse.executeScript("scrollBy(0,600)","");
 		Screenshot.tirarPrint("Busca pela lupa com sucesso", driver);
+		Driver.fecharDriver();
 	}
 
 	@Quando("^digitar um produto inexistente no site$")
@@ -59,5 +62,6 @@ public class BuscaProdutoLupaSteps {
 		BuscaProdutoLupaPageFactory produtoNaoEncontrado = new BuscaProdutoLupaPageFactory(driver);
 		produtoNaoEncontrado.ProdutoIndosponivel();
 		Screenshot.tirarPrint("Busca pela Lupa Falhou", driver);
+		Driver.fecharDriver();
 	}
 }

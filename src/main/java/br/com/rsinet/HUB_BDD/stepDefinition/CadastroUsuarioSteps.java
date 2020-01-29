@@ -1,5 +1,7 @@
 package br.com.rsinet.HUB_BDD.stepDefinition;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
@@ -52,17 +54,25 @@ public class CadastroUsuarioSteps {
 	public void eu_valido_se_o_usuário_foi_cadastrado() throws Throwable {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 4000);");
-		cadastroForm.ValidaUsuário();
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, -250);");
 		Screenshot.tirarPrint("Cadastro com sucesso", driver);
+		Driver.fecharDriver();
 	}
 
 	@Quando("^insiro as informções do usuário e tento enviar o formulario$")
 	public void insiro_as_informções_do_usuário_e_tento_enviar_o_formulario() throws Throwable {
-
+		cadastroForm.FormCadastro();
 	}
 
 	@Então("^apresenta o erro de login invalido$")
 	public void apresenta_o_erro_de_login_invalido() throws Throwable {
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, -250);");
+		cadastroForm.LoginInvalido();
+		Screenshot.tirarPrint("Erro ao efetuar o cadastro ", driver);
+		Driver.fecharDriver();
 
 	}
 }

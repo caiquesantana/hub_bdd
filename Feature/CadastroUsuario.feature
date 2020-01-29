@@ -1,5 +1,4 @@
 # language: pt
-
 Funcionalidade: Cadastro de usuario
 
   Contexto: 
@@ -11,9 +10,8 @@ Funcionalidade: Cadastro de usuario
     Quando insiro todas as informções do usuário
     E clico no botão de registra
     Então eu valido se o usuário foi cadastrado
-		
-    @CadastroFalha
-    Cenário: Cadastro de usuario com falha
+
+  @CadastroFalha
+  Cenário: Cadastro de usuario com falha
     Quando insiro as informções do usuário e tento enviar o formulario
     Então apresenta o erro de login invalido
-    
